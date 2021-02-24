@@ -14,5 +14,8 @@
   },
   "devDependencies": {
     "jest": "^26.6.3"
+  },
+  "bin": {
+    "brain-games": "bin/brain-games.js"
   }
 }

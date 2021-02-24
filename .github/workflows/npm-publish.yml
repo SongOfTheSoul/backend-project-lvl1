@@ -16,8 +16,8 @@ jobs:
         with:
           node-version: 12
       - run: npm ci
-      - run: npm test
-
+      - name: 'lint'
+        run: make lint
   publish-npm:
     needs: build
     runs-on: ubuntu-latest

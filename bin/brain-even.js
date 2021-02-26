@@ -1,5 +1,6 @@
 /* eslint-disable quotes */
 import readlineSync from 'readline-sync';
+import cli from '../src/cli.js';
 
 const even = (name) => {
   console.log(`Answer "yes" if the number is even, otherwise answer "no".`);
@@ -28,4 +29,6 @@ const even = (name) => {
   }
   console.log(`Congratulations, ${name}`);
 };
-export default even;
+console.log('Welcome to the Brain Games!');
+const name = cli();
+even(name);

@@ -4,7 +4,7 @@ import readlineSync from 'readline-sync';
 import cli from '../src/cli.js';
 
 const calc = (name) => {
-  console.log(`What is the result of the expression?`);
+  console.log('What is the result of the expression?');
   let step = 0;
   while (step < 3) {
     const num1 = Math.floor((Math.random() * 100) + 1);
@@ -18,7 +18,7 @@ const calc = (name) => {
         ans = Number(ans);
         if (ans === checker) {
           step += 1;
-          console.log(`Correct!`);
+          console.log('Correct!');
         } else {
           step = 0;
           console.log(`${ans} is wrong answer ;(. Correct answer was ${checker}.`);
@@ -33,7 +33,7 @@ const calc = (name) => {
         ans = Number(ans);
         if (ans === checker) {
           step += 1;
-          console.log(`Correct!`);
+          console.log('Correct!');
         } else {
           step = 0;
           console.log(`${ans} is wrong answer ;(. Correct answer was ${checker}.`);

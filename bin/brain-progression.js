@@ -4,7 +4,7 @@ import readlineSync from 'readline-sync';
 import cli from '../src/cli.js';
 
 const progression = (name) => {
-  console.log(`FWhat number is missing in the progression?`);
+  console.log('What number is missing in the progression?');
   let step = 0;
   while (step < 3) {
     const a = Math.floor((Math.random() * 30) + 10);
@@ -17,13 +17,15 @@ const progression = (name) => {
     arr[empty] = '..';
 
     console.log(`Question: ${arr[0]} ${arr[1]} ${arr[2]} ${arr[3]} ${arr[4]} ${arr[5]} ${arr[6]} ${arr[7]} ${arr[8]} ${arr[9]} `);
-    const ans = readlineSync.question('Answer: ');
-    if (ans == a + h * empty) {
+    let ans = readlineSync.question('Answer: ');
+    ans = Number(ans);
+    const checker = a + h * empty;
+    if (ans === checker) {
       step += 1;
-      console.log(`Correct!`);
+      console.log('Correct!');
     } else {
       step = 0;
-      console.log(`${ans} is wrong answer ;(. Correct answer was ${a + h * empty}.`);
+      console.log(`${ans} is wrong answer ;(. Correct answer was ${checker}.`);
       console.log(`Let's try again, ${name}!`);
     }
   }

@@ -12,40 +12,46 @@ const calc = (name) => {
     const num3 = Math.floor((Math.random() * 100) + 1);
     switch (num2) {
       case 1: {
+        const checker = num1 + num3;
         console.log(`Question: ${num1} + ${num3}`);
-        const ans = readlineSync.question('Answer: ');
-        if (ans == (num1 + num3)) {
+        let ans = readlineSync.question('Answer: ');
+        ans = Number(ans);
+        if (ans === checker) {
           step += 1;
           console.log(`Correct!`);
         } else {
           step = 0;
-          console.log(`${ans} is wrong answer ;(. Correct answer was ${num1 + num3}.`);
+          console.log(`${ans} is wrong answer ;(. Correct answer was ${checker}.`);
           console.log(`Let's try again, ${name}!`);
         }
         break;
       }
       case 2: {
+        const checker = num1 - num3;
         console.log(`Question: ${num1} - ${num3}`);
-        const ans = readlineSync.question('Answer: ');
-        if (ans == (num1 - num3)) {
+        let ans = readlineSync.question('Answer: ');
+        ans = Number(ans);
+        if (ans === checker) {
           step += 1;
           console.log(`Correct!`);
         } else {
           step = 0;
-          console.log(`${ans} is wrong answer ;(. Correct answer was ${num1 - num3}.`);
+          console.log(`${ans} is wrong answer ;(. Correct answer was ${checker}.`);
           console.log(`Let's try again, ${name}!`);
         }
         break;
       }
       default: {
+        const checker = num1 * num3;
         console.log(`Question: ${num1} * ${num3}`);
-        const ans = readlineSync.question('Answer: ');
-        if (ans == (num1 * num3)) {
+        let ans = readlineSync.question('Answer: ');
+        ans = Number(ans);
+        if (ans === checker) {
           step += 1;
           console.log(`Correct!`);
         } else {
           step = 0;
-          console.log(`${ans} is wrong answer ;(. Correct answer was ${num1 * num3}.`);
+          console.log(`${ans} is wrong answer ;(. Correct answer was ${checker}.`);
           console.log(`Let's try again, ${name}!`);
         }
       }

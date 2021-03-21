@@ -1,12 +1,14 @@
 /* eslint-disable quotes */
 import readlineSync from 'readline-sync';
 import cli from '../src/cli.js';
+import rng from '../src/rng.js';
 
 const even = (name) => {
+  const wincount = 3;
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   let step = 0;
-  while (step < 3) {
-    const num = Math.floor((Math.random() * 100) + 1);
+  while (step < wincount) {
+    const num = rng(1, 100);
     console.log(`Question: ${num}`);
     const ans = readlineSync.question('Answer: ');
     if (num % 2 === 0) {
